@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "coding-comrade",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Living the Full-Stack Life",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eugene Yamenko <yamenko@me.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/eyamenko/CodingComrade.com/issues"
   },
   "dependencies": {
     "gatsby": "^2.5.7",
@@ -38,22 +38,13 @@
   "devDependencies": {
     "prettier": "^1.17.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://CodingComrade.com",
   "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,scss,md}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   }
 }
