@@ -50,6 +50,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true
