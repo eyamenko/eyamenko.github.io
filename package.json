@@ -47,9 +47,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,scss,md}",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve"
   },
   "prettier": {
@@ -63,7 +61,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "yarn format",
+      "prettier --write",
       "git add"
     ]
   }
