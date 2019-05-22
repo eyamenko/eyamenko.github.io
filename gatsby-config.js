@@ -3,9 +3,12 @@ module.exports = {
     title: `Coding Comrade`,
     author: `Eugene Yamenko`,
     description: `Living the Full-Stack Life`,
-    siteUrl: `https://CodingComrade.com/`,
+    siteUrl: `https://CodingComrade.com`,
     social: {
-      twitter: `CodingComrade`,
+      twitter: `eyamenko`,
+      stackOverflow: `2829523`,
+      linkedIn: `eyamenko`,
+      github: `eyamenko`,
     },
   },
   plugins: [
@@ -57,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Coding Comrade`,
+        name: `Coding Comrade: Living the Full-Stack Life`,
         short_name: `Coding Comrade`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.jpg`,
       },
     },
     `gatsby-plugin-offline`,

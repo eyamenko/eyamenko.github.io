@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props;
+    const { location, title, children, author } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
     let header;
 
@@ -13,14 +13,13 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
         >
           <Link
+            className="gatsby-resp-image-link"
             style={{
-              boxShadow: `none`,
               textDecoration: `none`,
               color: `inherit`,
             }}
@@ -39,8 +38,8 @@ class Layout extends React.Component {
           }}
         >
           <Link
+            className="gatsby-resp-image-link"
             style={{
-              boxShadow: `none`,
               textDecoration: `none`,
               color: `inherit`,
             }}
@@ -63,9 +62,19 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <span>
+            © {new Date().getFullYear()}, {author}
+          </span>
+          <span style={{ float: 'right' }}>
+            <a
+              className="gatsby-resp-image-link"
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              rss
+            </a>
+          </span>
         </footer>
       </div>
     );

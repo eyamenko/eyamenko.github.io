@@ -8,6 +8,13 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faStackOverflow,
+  faGithubAlt,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
 
 import { rhythm } from '../utils/typography';
 
@@ -21,7 +28,7 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginBottom: rhythm(2),
             }}
           >
             <Image
@@ -38,11 +45,43 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              Written by <strong>{author}</strong>. I&#39;m living the
+              full-stack life.
+              <br />
+              <a
+                className="gatsby-resp-image-link"
+                href={`https://twitter.com/${social.twitter}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
               {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+              <a
+                className="gatsby-resp-image-link"
+                href={`https://github.com/${social.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithubAlt} />
+              </a>
+              {` `}
+              <a
+                className="gatsby-resp-image-link"
+                href={`https://stackoverflow.com/users/${social.stackOverflow}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faStackOverflow} />
+              </a>
+              {` `}
+              <a
+                className="gatsby-resp-image-link"
+                href={`https://www.linkedin.com/in/${social.linkedIn}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
             </p>
           </div>
@@ -66,6 +105,9 @@ const bioQuery = graphql`
         author
         social {
           twitter
+          stackOverflow
+          linkedIn
+          github
         }
       }
     }

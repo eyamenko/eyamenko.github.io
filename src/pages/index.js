@@ -9,12 +9,12 @@ import { rhythm } from '../utils/typography';
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
+    const { title, author, description } = data.site.siteMetadata;
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Living the Full-Stack Life" />
+      <Layout location={this.props.location} title={title} author={author}>
+        <SEO title={description} />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link className="gatsby-resp-image-link" to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -50,6 +50,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
