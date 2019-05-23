@@ -8,7 +8,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTwitter,
   faStackOverflow,
@@ -17,6 +16,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import { rhythm } from '../utils/typography';
+import ExternalLinkIcon from './externalLinkIcon';
 
 function Bio() {
   return (
@@ -48,41 +48,27 @@ function Bio() {
               Written by <strong>{author}</strong>. I&#39;m living the
               full-stack life.
               <br />
-              <a
-                className="gatsby-resp-image-link"
-                href={`https://twitter.com/${social.twitter}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
+              <ExternalLinkIcon
+                url={`https://twitter.com/${social.twitter}`}
+                icon={faTwitter}
+              />
               {` `}
-              <a
-                className="gatsby-resp-image-link"
-                href={`https://github.com/${social.github}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithubAlt} />
-              </a>
+              <ExternalLinkIcon
+                url={`https://github.com/${social.github}`}
+                icon={faGithubAlt}
+              />
               {` `}
-              <a
-                className="gatsby-resp-image-link"
-                href={`https://stackoverflow.com/users/${social.stackOverflow}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faStackOverflow} />
-              </a>
+              <ExternalLinkIcon
+                url={`https://stackoverflow.com/users/${social.stackOverflow}`}
+                icon={faStackOverflow}
+              />
               {` `}
-              <a
-                className="gatsby-resp-image-link"
-                href={`https://www.linkedin.com/in/${social.linkedIn}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
+              <ExternalLinkIcon
+                url={`https://www.linkedin.com/in/${social.linkedIn}`}
+                icon={faLinkedinIn}
+              />
+              {` `}
+              <ExternalLinkIcon url={`/rss.xml`} icon={faLinkedinIn} />
             </p>
           </div>
         );
