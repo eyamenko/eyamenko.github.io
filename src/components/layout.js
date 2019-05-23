@@ -18,7 +18,7 @@ class Layout extends React.Component {
           }}
         >
           <Link
-            className="gatsby-resp-image-link"
+            className="no-box-shadow"
             style={{
               textDecoration: `none`,
               color: `inherit`,
@@ -38,7 +38,7 @@ class Layout extends React.Component {
           }}
         >
           <Link
-            className="gatsby-resp-image-link"
+            className="no-box-shadow"
             style={{
               textDecoration: `none`,
               color: `inherit`,
@@ -62,19 +62,7 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          <span>
-            © {new Date().getFullYear()}, {author}
-          </span>
-          <span style={{ float: 'right' }}>
-            <a
-              className="gatsby-resp-image-link"
-              href="/rss.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              rss
-            </a>
-          </span>
+          © {new Date().getFullYear()}, {author}
         </footer>
       </div>
     );

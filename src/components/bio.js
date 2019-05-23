@@ -14,9 +14,10 @@ import {
   faGithubAlt,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { rhythm } from '../utils/typography';
-import ExternalLinkIcon from './externalLinkIcon';
 
 function Bio() {
   return (
@@ -48,27 +49,46 @@ function Bio() {
               Written by <strong>{author}</strong>. I&#39;m living the
               full-stack life.
               <br />
-              <ExternalLinkIcon
-                url={`https://twitter.com/${social.twitter}`}
-                icon={faTwitter}
-              />
-              {` `}
-              <ExternalLinkIcon
-                url={`https://github.com/${social.github}`}
-                icon={faGithubAlt}
-              />
-              {` `}
-              <ExternalLinkIcon
-                url={`https://stackoverflow.com/users/${social.stackOverflow}`}
-                icon={faStackOverflow}
-              />
-              {` `}
-              <ExternalLinkIcon
-                url={`https://www.linkedin.com/in/${social.linkedIn}`}
-                icon={faLinkedinIn}
-              />
-              {` `}
-              <ExternalLinkIcon url={`/rss.xml`} icon={faLinkedinIn} />
+              <a
+                className="no-box-shadow padding-right-15"
+                href={`https://twitter.com/${social.twitter}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+              <a
+                className="no-box-shadow padding-right-15"
+                href={`https://github.com/${social.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithubAlt} />
+              </a>
+              <a
+                className="no-box-shadow padding-right-15"
+                href={`https://stackoverflow.com/users/${social.stackOverflow}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faStackOverflow} />
+              </a>
+              <a
+                className="no-box-shadow padding-right-15"
+                href={`https://www.linkedin.com/in/${social.linkedIn}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+              <a
+                className="no-box-shadow padding-right-15"
+                href={`/rss.xml`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faRss} />
+              </a>
             </p>
           </div>
         );
