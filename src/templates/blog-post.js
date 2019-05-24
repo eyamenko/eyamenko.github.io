@@ -16,14 +16,13 @@ import SocialLink from '../components/socialLink';
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const location = this.props.location;
     const { title, author, social } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
-    const url = encodeURIComponent(location.href);
+    const url = encodeURIComponent(this.props.location.href);
     const text = encodeURIComponent(post.frontmatter.title);
 
     return (
-      <Layout location={location} title={title} author={author}>
+      <Layout title={title} author={author}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -57,7 +56,7 @@ class BlogPostTemplate extends React.Component {
           />
           <SocialLink
             style={{ paddingLeft: '15px' }}
-            href={location.href}
+            href={this.props.location.href}
             icon={faLink}
           />
         </p>

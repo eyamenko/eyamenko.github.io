@@ -5,15 +5,15 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
+import Pagination from '../components/pagination';
 
-class BlogIndex extends React.Component {
+class BlogListTemplate extends React.Component {
   render() {
-    const { data } = this.props;
-    const { title, author, description } = data.site.siteMetadata;
-    const posts = data.allMarkdownRemark.edges;
+    const { title, author, description } = this.props.site.siteMetadata;
+    const posts = this.props.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location} title={title} author={author}>
+      <Layout primary title={title} author={author}>
         <SEO title={description} />
         <Bio />
         {posts.map(({ node }) => {
@@ -38,15 +38,16 @@ class BlogIndex extends React.Component {
             </div>
           );
         })}
+        <Pagination {...this.props.pageContext} />
       </Layout>
     );
   }
 }
 
-export default BlogIndex;
+export default BlogListTemplate;
 
 export const pageQuery = graphql`
-  query {
+  query BlogListByPage($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -54,7 +55,11 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt

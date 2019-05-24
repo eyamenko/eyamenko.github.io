@@ -1,18 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function SocialLink(props) {
+function SocialLink({ style, href, icon }) {
   return (
     <a
       style={{
         boxShadow: `none`,
-        ...props.style,
+        ...style,
       }}
-      href={props.href}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={props.icon} />
+      <FontAwesomeIcon icon={icon} />
     </a>
   );
 }

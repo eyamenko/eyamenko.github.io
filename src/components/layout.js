@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { rhythm } from '../utils/typography';
+import { rhythm, scale } from '../utils/typography';
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children, author } = this.props;
-    // eslint-disable-next-line no-undef
-    const rootPath = `${__PATH_PREFIX__}/`;
+    const { primary, title, children, author } = this.props;
+
     let header;
 
-    if (location.pathname === rootPath) {
+    if (primary) {
       header = (
         <h1
           style={{
+            ...scale(1.3),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
