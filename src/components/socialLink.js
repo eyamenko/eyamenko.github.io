@@ -6,7 +6,7 @@ function SocialLink(props) {
     <a
       style={{
         boxShadow: `none`,
-        paddingRight: '15px',
+        ...props.style,
       }}
       href={props.href}
       target="_blank"

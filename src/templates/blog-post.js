@@ -1,19 +1,29 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import {
+  faTwitter,
+  faFacebookF,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
+import SocialLink from '../components/socialLink';
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const { title, author } = this.props.data.site.siteMetadata;
+    const location = this.props.location;
+    const { title, author, social } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
+    const url = encodeURIComponent(location.href);
+    const text = encodeURIComponent(post.frontmatter.title);
 
     return (
-      <Layout location={this.props.location} title={title} author={author}>
+      <Layout location={location} title={title} author={author}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -28,6 +38,28 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
+          <SocialLink
+            style={{ paddingLeft: '15px' }}
+            href={`https://twitter.com/intent/tweet?url=${url}&text=${text}&via=${
+              social.twitter
+            }`}
+            icon={faTwitter}
+          />
+          <SocialLink
+            style={{ paddingLeft: '15px' }}
+            href={`https://facebook.com/sharer.php?u=${url}`}
+            icon={faFacebookF}
+          />
+          <SocialLink
+            style={{ paddingLeft: '15px' }}
+            href={`https://www.linkedin.com/shareArticle?url=${url}&mini=true&title=${text}`}
+            icon={faLinkedinIn}
+          />
+          <SocialLink
+            style={{ paddingLeft: '15px' }}
+            href={location.href}
+            icon={faLink}
+          />
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -74,6 +106,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

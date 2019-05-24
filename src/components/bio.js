@@ -42,22 +42,30 @@ function Bio() {
               Hi, I&#39;m Eugene, a Software Engineer in Sydney, Australia.
               <br />
               <SocialLink
+                style={{ paddingRight: '15px' }}
                 href={`https://twitter.com/${social.twitter}`}
                 icon={faTwitter}
               />
               <SocialLink
+                style={{ paddingRight: '15px' }}
                 href={`https://github.com/${social.github}`}
                 icon={faGithubAlt}
               />
               <SocialLink
+                style={{ paddingRight: '15px' }}
                 href={`https://stackoverflow.com/users/${social.stackOverflow}`}
                 icon={faStackOverflow}
               />
               <SocialLink
+                style={{ paddingRight: '15px' }}
                 href={`https://www.linkedin.com/in/${social.linkedIn}`}
                 icon={faLinkedinIn}
               />
-              <SocialLink href={`/rss.xml`} icon={faRss} />
+              <SocialLink
+                style={{ paddingRight: '15px' }}
+                href={`/rss.xml`}
+                icon={faRss}
+              />
             </p>
           </div>
         );
