@@ -6,6 +6,7 @@ import { rhythm } from '../utils/typography';
 class Layout extends React.Component {
   render() {
     const { location, title, children, author } = this.props;
+    // eslint-disable-next-line no-undef
     const rootPath = `${__PATH_PREFIX__}/`;
     let header;
 
@@ -18,9 +19,9 @@ class Layout extends React.Component {
           }}
         >
           <Link
-            className="no-box-shadow"
             style={{
               textDecoration: `none`,
+              boxShadow: `none`,
               color: `inherit`,
             }}
             to={`/`}
@@ -38,9 +39,9 @@ class Layout extends React.Component {
           }}
         >
           <Link
-            className="no-box-shadow"
             style={{
               textDecoration: `none`,
+              boxShadow: `none`,
               color: `inherit`,
             }}
             to={`/`}

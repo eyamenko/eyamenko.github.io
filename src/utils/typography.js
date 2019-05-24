@@ -6,12 +6,6 @@ Wordpress2016.overrideThemeStyles = () => {
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
-    'a.no-box-shadow': {
-      boxShadow: `none`,
-    },
-    'a.padding-right-15': {
-      paddingRight: '15px',
-    },
   };
 };
 

@@ -1,10 +1,3 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
@@ -15,9 +8,9 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { rhythm } from '../utils/typography';
+import SocialLink from './socialLink';
 
 function Bio() {
   return (
@@ -46,49 +39,25 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>. I&#39;m living the
-              full-stack life.
+              Hi, I&#39;m Eugene and I&#39;m living the full-stack life!
               <br />
-              <a
-                className="no-box-shadow padding-right-15"
+              <SocialLink
                 href={`https://twitter.com/${social.twitter}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                className="no-box-shadow padding-right-15"
+                icon={faTwitter}
+              />
+              <SocialLink
                 href={`https://github.com/${social.github}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithubAlt} />
-              </a>
-              <a
-                className="no-box-shadow padding-right-15"
+                icon={faGithubAlt}
+              />
+              <SocialLink
                 href={`https://stackoverflow.com/users/${social.stackOverflow}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faStackOverflow} />
-              </a>
-              <a
-                className="no-box-shadow padding-right-15"
+                icon={faStackOverflow}
+              />
+              <SocialLink
                 href={`https://www.linkedin.com/in/${social.linkedIn}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-              <a
-                className="no-box-shadow padding-right-15"
-                href={`/rss.xml`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faRss} />
-              </a>
+                icon={faLinkedinIn}
+              />
+              <SocialLink href={`/rss.xml`} icon={faRss} />
             </p>
           </div>
         );
