@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 
 class NotFoundPage extends React.Component {
   render() {
-    const { title, author } = this.props.site.siteMetadata;
+    const { title, author } = this.props.data.site.siteMetadata;
 
     return (
       <Layout title={title} author={author}>

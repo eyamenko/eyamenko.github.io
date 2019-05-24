@@ -9,8 +9,8 @@ import Pagination from '../components/pagination';
 
 class BlogListTemplate extends React.Component {
   render() {
-    const { title, author, description } = this.props.site.siteMetadata;
-    const posts = this.props.allMarkdownRemark.edges;
+    const { title, author, description } = this.props.data.site.siteMetadata;
+    const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
       <Layout primary title={title} author={author}>
