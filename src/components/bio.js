@@ -39,7 +39,7 @@ function Bio() {
               }}
             />
             <p>
-              Hi, I&#39;m Eugene and I&#39;m living the full-stack life!
+              Hi, I&#39;m Eugene, a Software Engineer in Sydney, Australia.
               <br />
               <SocialLink
                 href={`https://twitter.com/${social.twitter}`}
