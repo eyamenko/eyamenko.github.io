@@ -6,6 +6,14 @@ Wordpress2016.overrideThemeStyles = () => {
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
+    'a.post-link': {
+      boxShadow: `none`,
+      marginLeft: `15px`,
+    },
+    'a.bio-link': {
+      boxShadow: `none`,
+      marginRight: `15px`,
+    },
   };
 };
 

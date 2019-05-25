@@ -6,23 +6,31 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactTooltip from 'react-tooltip';
+import copy from 'copy-to-clipboard';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
-import SocialLink from '../components/socialLink';
 
 class BlogPostTemplate extends React.Component {
+  onCopy = e => {
+    e.preventDefault();
+    copy(this.props.location.href);
+  };
+
   render() {
     const post = this.props.data.markdownRemark;
     const { title, author, social } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
-    const url = encodeURIComponent(this.props.location.href);
-    const text = encodeURIComponent(post.frontmatter.title);
+    const encodedUrl = encodeURIComponent(this.props.location.href);
+    const encodedTitle = encodeURIComponent(post.frontmatter.title);
 
     return (
       <Layout title={title} author={author}>
+        <ReactTooltip />
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -37,28 +45,44 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
-          <SocialLink
-            style={{ paddingLeft: '15px' }}
-            href={`https://twitter.com/intent/tweet?url=${url}&text=${text}&via=${
+          <a
+            className="post-link"
+            href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&via=${
               social.twitter
             }`}
-            icon={faTwitter}
-          />
-          <SocialLink
-            style={{ paddingLeft: '15px' }}
-            href={`https://facebook.com/sharer.php?u=${url}`}
-            icon={faFacebookF}
-          />
-          <SocialLink
-            style={{ paddingLeft: '15px' }}
-            href={`https://www.linkedin.com/shareArticle?url=${url}&mini=true&title=${text}`}
-            icon={faLinkedinIn}
-          />
-          <SocialLink
-            style={{ paddingLeft: '15px' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a
+            className="post-link"
+            href={`https://facebook.com/sharer.php?u=${encodedUrl}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          <a
+            className="post-link"
+            href={`https://www.linkedin.com/shareArticle?url=${encodedUrl}&mini=true&title=${encodedTitle}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+          <a
+            className="post-link"
             href={this.props.location.href}
-            icon={faLink}
-          />
+            data-tip="Copied"
+            data-effect="solid"
+            data-event="click"
+            data-event-off="mouseleave"
+            data-iscapture="true"
+            onClick={this.onCopy}
+          >
+            <FontAwesomeIcon icon={faLink} />
+          </a>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr

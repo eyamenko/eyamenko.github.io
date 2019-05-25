@@ -8,9 +8,9 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { rhythm } from '../utils/typography';
-import SocialLink from './socialLink';
 
 function Bio() {
   return (
@@ -41,31 +41,46 @@ function Bio() {
             <p>
               Hi, I&#39;m Eugene, a Software Engineer in Sydney, Australia.
               <br />
-              <SocialLink
-                style={{ paddingRight: '15px' }}
+              <a
+                className="bio-link"
                 href={`https://twitter.com/${social.twitter}`}
-                icon={faTwitter}
-              />
-              <SocialLink
-                style={{ paddingRight: '15px' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+              <a
+                className="bio-link"
                 href={`https://github.com/${social.github}`}
-                icon={faGithubAlt}
-              />
-              <SocialLink
-                style={{ paddingRight: '15px' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithubAlt} />
+              </a>
+              <a
+                className="bio-link"
                 href={`https://stackoverflow.com/users/${social.stackOverflow}`}
-                icon={faStackOverflow}
-              />
-              <SocialLink
-                style={{ paddingRight: '15px' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faStackOverflow} />
+              </a>
+              <a
+                className="bio-link"
                 href={`https://www.linkedin.com/in/${social.linkedIn}`}
-                icon={faLinkedinIn}
-              />
-              <SocialLink
-                style={{ paddingRight: '15px' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+              <a
+                className="bio-link"
                 href={`/rss.xml`}
-                icon={faRss}
-              />
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faRss} />
+              </a>
             </p>
           </div>
         );
