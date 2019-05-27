@@ -16,14 +16,14 @@ import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
-  onCopy = e => {
+  copy = e => {
     e.preventDefault();
     copy(this.props.location.href);
   };
 
   render() {
     const post = this.props.data.markdownRemark;
-    const { title, author, social } = this.props.data.site.siteMetadata;
+    const { title, author } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
     const encodedUrl = encodeURIComponent(this.props.location.href);
     const encodedTitle = encodeURIComponent(post.frontmatter.title);
@@ -47,9 +47,7 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
           <a
             className="post-link"
-            href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&via=${
-              social.twitter
-            }`}
+            href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -79,7 +77,7 @@ class BlogPostTemplate extends React.Component {
             data-event="click"
             data-event-off="mouseleave"
             data-iscapture="true"
-            onClick={this.onCopy}
+            onClick={this.copy}
           >
             <FontAwesomeIcon icon={faLink} />
           </a>
@@ -129,9 +127,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
-        social {
-          twitter
-        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

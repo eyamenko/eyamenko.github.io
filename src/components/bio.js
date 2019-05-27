@@ -1,12 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import {
-  faTwitter,
-  faStackOverflow,
-  faGithubAlt,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -43,27 +38,11 @@ function Bio() {
               <br />
               <a
                 className="bio-link"
-                href={`https://twitter.com/${social.twitter}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                className="bio-link"
                 href={`https://github.com/${social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithubAlt} />
-              </a>
-              <a
-                className="bio-link"
-                href={`https://stackoverflow.com/users/${social.stackOverflow}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faStackOverflow} />
               </a>
               <a
                 className="bio-link"
@@ -102,8 +81,6 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
-          twitter
-          stackOverflow
           linkedIn
           github
         }

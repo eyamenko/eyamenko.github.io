@@ -5,8 +5,6 @@ module.exports = {
     description: `Living the Full-Stack Life`,
     siteUrl: `https://CodingComrade.com`,
     social: {
-      twitter: `eyamenko`,
-      stackOverflow: `2829523`,
       linkedIn: `eyamenko`,
       github: `eyamenko`,
     },
