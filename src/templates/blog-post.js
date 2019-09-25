@@ -51,7 +51,7 @@ class BlogPostTemplate extends React.Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faTwitter} size="1x" />
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           <a
             className="post-link"
@@ -59,7 +59,7 @@ class BlogPostTemplate extends React.Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faFacebookF} size="1x" />
+            <FontAwesomeIcon icon={faFacebookF} />
           </a>
           <a
             className="post-link"
@@ -67,7 +67,7 @@ class BlogPostTemplate extends React.Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
+            <FontAwesomeIcon icon={faLinkedinIn} />
           </a>
           <a
             className="post-link"
@@ -79,7 +79,7 @@ class BlogPostTemplate extends React.Component {
             data-iscapture="true"
             onClick={this.copy}
           >
-            <FontAwesomeIcon icon={faLink} size="1x" />
+            <FontAwesomeIcon icon={faLink} />
           </a>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
