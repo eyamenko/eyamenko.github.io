@@ -42,7 +42,7 @@ function Bio() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faGithubAlt} />
+                <FontAwesomeIcon icon={faGithubAlt} size="1x" />
               </a>
               <a
                 className="bio-link"
@@ -50,7 +50,7 @@ function Bio() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faLinkedinIn} />
+                <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
               </a>
               <a
                 className="bio-link"
@@ -58,7 +58,7 @@ function Bio() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faRss} />
+                <FontAwesomeIcon icon={faRss} size="1x" />
               </a>
             </p>
           </div>
