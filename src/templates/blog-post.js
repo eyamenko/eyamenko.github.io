@@ -9,6 +9,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactTooltip from 'react-tooltip';
 import copy from 'copy-to-clipboard';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -45,30 +46,30 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
-          <a
+          <OutboundLink
             className="post-link"
             href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a
+          </OutboundLink>
+          <OutboundLink
             className="post-link"
             href={`https://facebook.com/sharer.php?u=${encodedUrl}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faFacebookF} />
-          </a>
-          <a
+          </OutboundLink>
+          <OutboundLink
             className="post-link"
             href={`https://www.linkedin.com/shareArticle?url=${encodedUrl}&mini=true&title=${encodedTitle}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
+          </OutboundLink>
           <a
             className="post-link"
             href={this.props.location.href}

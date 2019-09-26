@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 import { faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { rhythm } from '../utils/typography';
 
@@ -36,30 +37,30 @@ function Bio() {
             <p>
               Hi, I&#39;m Eugene, a Software Engineer in Sydney, Australia.
               <br />
-              <a
+              <OutboundLink
                 className="bio-link"
                 href={`https://github.com/${social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithubAlt} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink
                 className="bio-link"
                 href={`https://www.linkedin.com/in/${social.linkedIn}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink
                 className="bio-link"
                 href={`/rss.xml`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faRss} />
-              </a>
+              </OutboundLink>
             </p>
           </div>
         );
