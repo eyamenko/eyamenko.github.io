@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { config } from '@fortawesome/fontawesome-svg-core';
+
 import { rhythm, scale } from '../utils/typography';
 
 config.autoAddCss = false;
