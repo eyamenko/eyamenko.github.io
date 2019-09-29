@@ -17,16 +17,22 @@ import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
+  get postUrl() {
+    return (
+      this.props.data.site.siteMetadata.siteUrl + this.props.pageContext.slug
+    );
+  }
+
   copy = e => {
     e.preventDefault();
-    copy(this.props.location.href);
+    copy(this.postUrl);
   };
 
   render() {
     const post = this.props.data.markdownRemark;
     const { title, author } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
-    const encodedUrl = encodeURIComponent(this.props.location.href);
+    const encodedUrl = encodeURIComponent(this.postUrl);
     const encodedTitle = encodeURIComponent(post.frontmatter.title);
 
     return (
@@ -72,7 +78,7 @@ class BlogPostTemplate extends React.Component {
           </OutboundLink>
           <a
             className="post-link"
-            href={this.props.location.href}
+            href={this.postUrl}
             data-tip="Copied"
             data-effect="solid"
             data-event="click"
@@ -128,6 +134,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
