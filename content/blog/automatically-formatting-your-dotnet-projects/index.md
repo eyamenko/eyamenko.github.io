@@ -25,6 +25,7 @@ dotnet tool install dotnet-format
 ```
 
 3. Add an _.editorconfig_ file to the root of the project. I suggest to use [Roslyn team’s config file](https://github.com/dotnet/roslyn/blob/master/.editorconfig) as a base.
+
 4. Initialize an _npm_ project:
 
 ```bash
@@ -58,4 +59,5 @@ module.exports = {
 };
 ```
 
+\
 That’s it. I’ve created a [template repository](https://github.com/eyamenko/dotnet-core-template-repository), which includes everything I’ve mentioned above; and can be used as a starting point when creating new .NET Core repositories. Happy coding!
