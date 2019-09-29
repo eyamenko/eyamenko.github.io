@@ -12,11 +12,31 @@ Kind people from Microsoft created a handy dotnet tool - [dotnet-format](https:/
 
 .NET Core 3.0 introduced a concept of [local dotnet tools](https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0#local-tools). It’s similar to local executable _npm_ scripts. We can install the _dotnet-format_ as a local tool and then make it format staged files when someone commits the code.
 
-1. Create a dotnet tools manifest file: `dotnet new tool-manifest`
-2. Install the _dotnet-format_: `dotnet tool install dotnet-format`
+1. Create a dotnet tools manifest file:
+
+```bash
+dotnet new tool-manifest
+```
+
+2. Install the _dotnet-format_:
+
+```bash
+dotnet tool install dotnet-format
+```
+
 3. Add an _.editorconfig_ file to the root of the project. I suggest to use [Roslyn team’s config file](https://github.com/dotnet/roslyn/blob/master/.editorconfig) as a base.
-4. Initialize an _npm_ project: `yarn init`
-5. Install the following _npm_ packages as dev dependencies: `yarn add husky lint-staged --dev`
+4. Initialize an _npm_ project:
+
+```bash
+yarn init
+```
+
+5. Install the following _npm_ packages as dev dependencies:
+
+```bash
+yarn add husky lint-staged --dev
+```
+
 6. Configure _husky_ to run _lint-staged_ as a pre-commit _git_ hook. Add the following to _package.json_:
 
 ```json
