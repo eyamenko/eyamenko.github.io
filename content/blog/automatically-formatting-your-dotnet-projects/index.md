@@ -47,7 +47,7 @@ yarn add husky lint-staged --dev
   }
 },
 "scripts": {
-  "install": "dotnet tool restore"
+  "preinstall": "dotnet tool restore"
 }
 ```
 
