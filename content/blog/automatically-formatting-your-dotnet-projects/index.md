@@ -38,13 +38,16 @@ yarn init
 yarn add husky lint-staged --dev
 ```
 
-6. Configure _husky_ to run _lint-staged_ as a pre-commit _git_ hook. Add the following to _package.json_:
+6. Configure _husky_ to run _lint-staged_ as a pre-commit _git_ hook; and configure _npm_ to restore dotnet tools on install. Add the following to _package.json_:
 
 ```json
 "husky": {
   "hooks": {
     "pre-commit": "lint-staged -r"
   }
+},
+"scripts": {
+  "install": "dotnet tool restore"
 }
 ```
 
@@ -52,7 +55,7 @@ yarn add husky lint-staged --dev
 
 ```javascript
 module.exports = {
-  'src/**/*.cs': filenames => [
+  '*.cs': filenames => [
     `dotnet dotnet-format --files ${filenames.join(',')}`,
     `git add ${filenames.join(' ')}`,
   ],
