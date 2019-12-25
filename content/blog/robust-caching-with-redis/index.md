@@ -12,28 +12,24 @@ Unfortunately, incorrectly used or incorrectly configured client can bring the e
 
 As an example, I will use an excellent client library for .NET, called [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/). At the time of writing, it’s the most popular one and it’s battle tested by some large websites, e.g. [StackOverflow](https://stackoverflow.com/).
 
-1. First things first, make sure to use the latest version of the library. Authors often release new versions and promptly fix issues.
+1. First things first, make sure to use the latest version of the library. Authors promptly fix issues and often release new versions.
 
 2. Have a single connection per application and initialize it in a thread-safe way. Make the cache client a singleton.
 
-In the constructor:
-
 ```csharp
+// In the constructor
 _connection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(redisOptions.Value.Configuration));
 ```
 
-\
-In the `Startup.cs`:
-
 ```csharp
+// Startup.cs
 services.AddSingleton<ICacheClient, RedisCacheClient>();
 ```
 
 3. Use circuit breakers. Wrap get and set commands into a separate circuit breakers. Sometimes new items cannot be inserted, because the server, for instance, ran out of memory, but it shouldn't affect the ability to get cached items.
 
-In the constructor:
-
 ```csharp
+// In the constructor
 _readCircuitBreaker = Policy.Handle<Exception>().CircuitBreakerAsync(exceptionsAllowedBeforeBreaking, durationOfBreak);
 _writeCircuitBreaker = Policy.Handle<Exception>().CircuitBreakerAsync(exceptionsAllowedBeforeBreaking, durationOfBreak);
 ```
@@ -46,16 +42,15 @@ keyValuePairs.Select(kvp => db.StringSetAsync(kvp.Key, kvp.Value, expiry: _cache
 
 5. Set the minimum number of worker threads used by the application. You can read more about it [here](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Timeouts.md).
 
-In the `Program.cs`:
-
 ```csharp
+// Program.cs
 ThreadPool.SetMinThreads(MinThreads, MinThreads);
 ```
 
 6. Configure the client to not abort if connection fails. Also, configure sync and connection timeouts.
 
-```
-localhost:6379,abortConnect=false,syncTimeout=3000,connectTimeout=3000
+```json
+"Configuration": "localhost:6379,abortConnect=false,syncTimeout=3000,connectTimeout=3000"
 ```
 
 \
