@@ -9,12 +9,12 @@ import Pagination from '../components/pagination';
 
 class BlogListTemplate extends React.Component {
   render() {
-    const { title, author, description } = this.props.data.site.siteMetadata;
+    const { title, author } = this.props.data.site.siteMetadata;
     const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
-      <Layout primary title={title} author={author}>
-        <SEO title={description} />
+      <Layout landing title={title} author={author}>
+        <SEO />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
@@ -52,7 +52,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
-        description
       }
     }
     allMarkdownRemark(

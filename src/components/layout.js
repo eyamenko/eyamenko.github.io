@@ -8,11 +8,11 @@ config.autoAddCss = false;
 
 class Layout extends React.Component {
   render() {
-    const { primary, title, children, author } = this.props;
+    const { landing, title, children, author } = this.props;
 
     let header;
 
-    if (primary) {
+    if (landing) {
       header = (
         <h1
           style={{
