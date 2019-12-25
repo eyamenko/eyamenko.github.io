@@ -4,6 +4,7 @@ module.exports = {
     author: `Eugene Yamenko`,
     description: `Living the Full-Stack Life`,
     siteUrl: `https://CodingComrade.com`,
+    image: `/image.jpg`,
     social: {
       linkedIn: `eyamenko`,
       github: `eyamenko`,
