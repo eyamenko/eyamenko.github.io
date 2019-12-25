@@ -12,7 +12,7 @@ Unfortunately, incorrectly used or incorrectly configured client can bring the e
 
 As an example, I will use an excellent client library for .NET, called [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/). At the time of writing, it’s the most popular one and it’s battle tested by some large websites, e.g. [StackOverflow](https://stackoverflow.com/).
 
-1. First things first, make sure to use the latest version of the library. Authors update it and release bug fixes frequently.
+1. First things first, make sure to use the latest version of the library. Authors often release new versions and promptly fix issues.
 
 2. Have a single connection per application and initialize it in a thread-safe way. Make the cache client a singleton.
 
