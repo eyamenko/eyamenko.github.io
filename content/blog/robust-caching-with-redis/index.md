@@ -1,7 +1,7 @@
 ---
 title: Robust caching with Redis
 date: '2019-12-25T02:55:56.981Z'
-description: Sometimes querying the database can be slow. Especially, if the tables are large and it’s not possible to take advantage of existing indices. That’s where caching shines. It’s a lot faster to get a value from cache instead of getting it from the database. Particularly, if it’s a frequently returned data and it doesn’t change often...
+description:
 ---
 
 Sometimes querying the database can be slow. Especially, if the tables are large and it’s not possible to take advantage of existing indices. That’s where caching shines. It’s a lot faster to get a value from cache instead of getting it from the database. Particularly, if it’s a frequently returned data and it doesn’t change often.

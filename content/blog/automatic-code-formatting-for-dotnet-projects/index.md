@@ -1,7 +1,7 @@
 ---
 title: Automatic code formatting for .NET projects
 date: '2019-09-29T07:34:53.585Z'
-description: Every programmer has its own coding style preferences, but software development teams should have a well defined standards. It makes it easier to maintain the project, read the code, review pull requests, etc. Team mates join and leave. If there is no common ground, projects start looking like a collection of unrelated things...
+description:
 ---
 
 Every programmer has its own coding style preferences, but software development teams should have a well defined standards. It makes it easier to maintain the project, read the code, review pull requests, etc. Team mates join and leave. If there is no common ground, projects start looking like a collection of unrelated things.
