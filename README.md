@@ -1,1 +1,1 @@
-# [CodingComrade.com](https://CodingComrade.com) [![Build Status](https://travis-ci.com/eyamenko/eyamenko.github.io.svg?branch=release)](https://travis-ci.com/eyamenko/eyamenko.github.io)
+# [CodingComrade.com](https://CodingComrade.com) ![Gatsby Publish](https://github.com/eyamenko/eyamenko.github.io/actions/workflows/main.yml/badge.svg)
