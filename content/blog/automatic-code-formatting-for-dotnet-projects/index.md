@@ -8,7 +8,7 @@ Every programmer has its own coding style preferences, but software development 
 
 To solve this issue, community created a wide variety of tools. For instance, there is an awesome project called [Prettier](https://prettier.io/). It formats, or how they call it — _prettifies_, certain files. Unfortunately, it doesn’t support .NET languages, but don’t get upset. There is something out there that can help us keep our .NET codebases consistent.
 
-Kind people from Microsoft created a handy dotnet tool - [dotnet-format](https://github.com/dotnet/format). It reads style preferences from an [.editorconfig](https://editorconfig.org/) file and formats files accordingly. As a bonus, Visual Studio supports _.editorconfig_ rules as well and can apply them when you format the code manually. Looks like we’ve got everything in place now, we can relax and stop worrying about style preferences and formatting. The solution/project can be initially formatted by the _dotnet-format_ and then, before committing a change, each developer will have to make sure they format their change in Visual Studio manually. There is one little problem here though, people tend to forget things. We can do better. We can automate it.
+Kind people from Microsoft created a handy dotnet tool - [dotnet-format](https://github.com/dotnet/format). It reads style preferences from an [.editorconfig](https://editorconfig.org/) file and formats files accordingly. As a bonus, Visual Studio supports _.editorconfig_ rules as well and can apply them when the code is formatted manually. Looks like we’ve got everything in place now, we can relax and stop worrying about style preferences and formatting. The solution/project can be initially formatted by the _dotnet-format_ and then, before committing a change, each developer will have to make sure they format their change in Visual Studio manually. There is one little problem here though, people tend to forget things. We can do better. We can automate it.
 
 .NET Core 3.0 introduced a concept of [local dotnet tools](https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0#local-tools). It’s similar to local executable _npm_ scripts. We can install the _dotnet-format_ as a local tool and then make it format staged files when someone commits the code.
 
@@ -63,4 +63,6 @@ module.exports = {
 ```
 
 \
-That’s it. I’ve created a [template repository](https://github.com/eyamenko/dotnet-core-template-repository), which includes everything I’ve mentioned above; and can be used as a starting point when creating new .NET Core repositories. Happy coding!
+That’s it. I’ve created a [template repository](https://github.com/eyamenko/dotnet-core-template-repository), which includes everything I’ve mentioned above; and can be used as a starting point when creating new .NET Core repositories.
+
+Happy coding!

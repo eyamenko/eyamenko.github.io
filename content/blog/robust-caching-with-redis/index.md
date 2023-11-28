@@ -40,7 +40,7 @@ _writeCircuitBreaker = Policy.Handle<Exception>().CircuitBreakerAsync(exceptions
 keyValuePairs.Select(kvp => db.StringSetAsync(kvp.Key, kvp.Value, expiry: _cacheExpiry, flags: CommandFlags.FireAndForget));
 ```
 
-5. Set the minimum number of worker threads used by the application. You can read more about it [here](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Timeouts.md).
+5. Set the minimum number of worker threads used by the application. More can be read about it [here](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Timeouts.md).
 
 ```csharp
 // Program.cs

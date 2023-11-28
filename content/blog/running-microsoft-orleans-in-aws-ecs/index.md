@@ -41,4 +41,6 @@ services.AddAWSContainerMetadataService();
 ```
 
 \
-It’s as simple as that. If you want to take a look at the source code, it’s hosted [here](https://github.com/eyamenko/AWSECS.ContainerMetadata). If you find an issue or just want to make it better, please don’t hesitate to create a pull request. Happy coding!
+It’s as simple as that. If you want to take a look at the source code, it’s hosted [here](https://github.com/eyamenko/AWSECS.ContainerMetadata). If you find an issue or just want to make it better, please don’t hesitate to create a pull request.
+
+Happy coding!
