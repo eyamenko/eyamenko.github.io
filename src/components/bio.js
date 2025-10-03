@@ -69,6 +69,8 @@ function Bio() {
   );
 }
 
+const sum = 1 + 1;
+
 const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/image.jpg/" }) {
